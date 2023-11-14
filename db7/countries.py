@@ -4,14 +4,13 @@ from base import Base
 class Countries(Base):
     __tablename__ = 'countries'
 
-    country_id = Column(String(40), primary_key=True)
-    name = Column(String(3))
+    name = Column(String(40))
+    country_id = Column(String(3), primary_key=True)
     area_sqkm = Column(Integer)
     population = Column(Integer)
 
-    def __init__(self, country_id, name, area_sqkm, population, actors):
+    def __init__(self, name, country_id, area_sqkm, population):
         self.country_id = country_id
         self.name = name
         self.area_sqkm = area_sqkm
         self.population = population
-        self.actors = actors

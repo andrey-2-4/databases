@@ -5,9 +5,8 @@ from base import Base
 class Results(Base):
     __tablename__ = 'results'
 
-    id = Column(Integer, primary_key=True)
-    event_id = Column(String(7), ForeignKey('events.event_id'))
-    player_id = Column(String(10), ForeignKey('players.player_id'))
+    event_id = Column(String(7), ForeignKey('events.event_id'), primary_key=True)
+    player_id = Column(String(10), ForeignKey('players.player_id'), primary_key=True)
     medal = Column(String(7))
     result = Column(Float)
 
